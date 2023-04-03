@@ -2,6 +2,7 @@ import React from 'react'
 import {createBrowserRouter } from "react-router-dom"
 import { Homelayout } from '../components'
 import Home from '../pages/Home'
+import Errorboundary from '../utils/hoc/Errorboundary'
 
 const Routes = () => {
 
@@ -12,15 +13,15 @@ const Routes = () => {
             children: [
                 {
                     index: true,
-                    element: <Home />
+                    element: <Home />,
+                    errorElement: <Errorboundary />,
+                    hasErrorBoundary: true
                 }
             ]
         }
     ])
 
-  return (
-    <div>Routes</div>
-  )
+  return element
 }
 
 export default Routes
